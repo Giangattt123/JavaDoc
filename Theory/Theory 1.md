@@ -1,9 +1,10 @@
 # Java Theory 1
 
 Kiến thức bài học này:
-. Syntax cơ bản trong Java: nhập xuất, biến, toán tử, if-else, loop, arrays, wrapper class, string, math,..
-. RegExr(Regular Expression): Biểu thức chính quy
-. Class & Object: Encapsulation, Inheritance, Polymorphism, Common Modifiers, Static, Interfaces, Abstract Classes
+
+- Syntax cơ bản trong Java: nhập xuất, biến, toán tử, if-else, loop, arrays, wrapper class, string, math,..
+- RegExr(Regular Expression): Biểu thức chính quy
+- Class & Object: Encapsulation, Inheritance, Polymorphism, Common Modifiers, Static, Interfaces, Abstract Classes
 
 # Table Of Content
 
@@ -13,7 +14,7 @@ Kiến thức bài học này:
 
 ## I. CÚ PHÁP CƠ BẢN
 
-Một hàm main cơ bản, các thủ tục cơ bản, ta viết bên trong này.
+- Một hàm main cơ bản, các thủ tục cơ bản, ta viết bên trong này.
 
 ```
 public class Demo {
@@ -26,7 +27,7 @@ public class Demo {
 
 #### a. Nhập
 
-Trước tiên, ta cần import gói dữ liệu cần sử dụng.
+- Trước tiên, ta cần import gói dữ liệu cần sử dụng.
 
 ```
 import java.util.Scanner;
@@ -34,11 +35,12 @@ Scanner sc = new Scanner(System.in)
 ```
 
 Trong đó:
-. Scanner: là lớp giúp chúng ta lấy dữ liệu đầu vào, nằm trong gói `java.util`.
-. sc: là tên đối tượng từ lớp Scanner, khi nhập, ta sẽ làm việc với đối tượng này.
-. Trong ngoặc () là nguồn vào: có thể là hệ thống, người dùng hoặc tệp. Như ở đây là đầu vào hệ thống.
 
-Một số phướng thức của lớp Scanner:
+- Scanner: là lớp giúp chúng ta lấy dữ liệu đầu vào, nằm trong gói `java.util`.
+- sc: là tên đối tượng từ lớp Scanner, khi nhập, ta sẽ làm việc với đối tượng này.
+- Trong ngoặc () là nguồn vào: có thể là hệ thống, người dùng hoặc tệp. Như ở đây là đầu vào hệ thống.
+
+Một số phương thức của lớp Scanner:
 
 | **Phương thức** | **Ý nghĩa**                                     |
 | --------------- | ----------------------------------------------- |
@@ -59,7 +61,7 @@ Scanner sc = new Scanner(System.in);
 int t = sc.nextInt();
 ```
 
-Trong Java cũng gặp tình trạng bị trôi lệnh khi nhập 1 string ngay sau khi nhập 1 số. Cách sử lý là dùng thêm 1 lần nhập `scan.nextLine()` trước khi nhập string.
+- Trong Java cũng gặp tình trạng bị trôi lệnh khi nhập 1 string ngay sau khi nhập 1 số. Cách sử lý là dùng thêm 1 lần nhập `scan.nextLine()` trước khi nhập string.
 
 ```
 int num = sc.nextInt();
@@ -69,7 +71,7 @@ String str = scan.nextLine();
 
 #### b. Xuất
 
-. Sử dụng `System.out.printfln();`
+- Sử dụng `System.out.printfln();`
 
 > Xuất kết quả ra màn hình đồng thời con trỏ chuột nhảy xuống dòng tiếp theo.
 > . Sử dụng `System.out.print();`
@@ -124,15 +126,15 @@ public class Main {
 
 #### b. Kiểu dữ liệu & Toán tử
 
-. Tương tự C và CPP, cũng có ép kiểu.
-. Không có kiểu dữ liệu long long.
-. Muốn nhập kiểu **char**. Ta nhập vào string và trỏ tới vị trí đầu tiên.
+- Tương tự C và CPP, cũng có ép kiểu.
+- Không có kiểu dữ liệu long long.
+- Muốn nhập kiểu **char**. Ta nhập vào string và trỏ tới vị trí đầu tiên.
 
 ```
 char c = scan.next().charAt(0);
 ```
 
-. Toán tử == dùng để so sánh, nhưng khi muốn so sánh 2 string với nhau, ta cần dùng phương thức `equals()`, giá trị trả về là true/false.
+- Toán tử == dùng để so sánh, nhưng khi muốn so sánh 2 string với nhau, ta cần dùng phương thức `equals()`, giá trị trả về là true/false.
 
 ```
 String a = "ABC";
@@ -147,7 +149,7 @@ System.out.println(a.equals(b)); // true
 
 ### 4. Mảng
 
-Cần import gói dữ liệu `java.util.Arrays` khi làm việc với các phương thức của mảng.
+- Cần import gói dữ liệu `java.util.Arrays` khi làm việc với các phương thức của mảng.
 
 #### a. Khai báo mảng
 
@@ -198,10 +200,16 @@ for (int i = 0; i < 4; i++) {
 | float                | Float            |
 | double               | Double           |
 
-. Chuyển đổi một kiểu dữ liệu nguyên thủy sang kiểu `Wrapper` của nó người ta gọi là `Boxing`. Ngược lại, khi bạn chuyển từ một kiểu `Wrapper` sang kiểu nguyên thủy của nó người ta gọi là `Unboxing`
-. Một số cấu trúc khác bên trong ngôn ngữ Java, như **ArrayList** hay **Vector** đều chứa đựng các tập hợp kiểu dữ liệu đối tượng thay vì kiểu nguyên thủy, nên việc biết và vận dụng các lớp ``Wrapper` là bắt buộc.
-. Ngoài ra thì kiểu dữ liệu đối tượng sẽ thích hợp hơn trong việc thực thi đa luồng (`multithreading`) và đồng bộ hóa (`synchronization```).
-. Các phương thức với Wrapper class: + ...Value(): giúp chuyển đổi một giá trị của lớp Wrapper nào đó về kiểu dữ liệu nguyên thủy (unboxing). + parse...(""): Tham số truyền vào cho phương thức là một chuỗi, kết quả nhận được là một giá trị nguyên thủy tương ứng với chuỗi truyền vào. + toString(): chuyển đổi từ kiểu dữ liệu Wrapper thành string.
+- Chuyển đổi một kiểu dữ liệu nguyên thủy sang kiểu `Wrapper` của nó người ta gọi là `Boxing`. Ngược lại, khi bạn chuyển từ một kiểu `Wrapper` sang kiểu nguyên thủy của nó người ta gọi là `Unboxing`
+
+- Một số cấu trúc khác bên trong ngôn ngữ Java, như **ArrayList** hay **Vector** đều chứa đựng các tập hợp kiểu dữ liệu đối tượng thay vì kiểu nguyên thủy, nên việc biết và vận dụng các lớp ``Wrapper` là bắt buộc.
+
+- Ngoài ra thì kiểu dữ liệu đối tượng sẽ thích hợp hơn trong việc thực thi đa luồng (`multithreading`) và đồng bộ hóa (`synchronization```).
+
+- Các phương thức với Wrapper class:
+  - ...Value(): giúp chuyển đổi một giá trị của lớp Wrapper nào đó về kiểu dữ liệu nguyên thủy (unboxing).
+  - parse...(""): Tham số truyền vào cho phương thức là một chuỗi, kết quả nhận được là một giá trị nguyên thủy tương ứng với chuỗi truyền vào.
+  - toString(): chuyển đổi từ kiểu dữ liệu Wrapper thành string.
 
 ```
 // ... Value
@@ -230,30 +238,50 @@ int j2 = j.intValue();
 
 #### b. Stringg classes
 
-. String trong Java không phải là một kiểu dữ liệu nguyên thủy mà là một đối tượng của class String.
+- String trong Java không phải là một kiểu dữ liệu nguyên thủy mà là một đối tượng của class String.
 
 ```
 String st = “Hello World” ;
 String st = new String(“Hello World”);
 ```
 
-. Các phương thức với String class: + length(): Trả về độ dài của chuỗi (số ký tự). + charAt(int index): Trả về ký tự ở vị trí index trong chuỗi. + substring(int beginIndex): Trả về một phần của chuỗi bắt đầu từ beginIndex đến hết chuỗi. + substring(int beginIndex, int endIndex): Trả về một phần của chuỗi từ beginIndex đến endIndex - 1. + equals(Object obj): So sánh chuỗi với một đối tượng khác để kiểm tra xem chúng có giống nhau không. + equalsIgnoreCase(String anotherString): So sánh chuỗi với một chuỗi khác (không phân biệt chữ hoa chữ thường). + compareTo(String anotherString): So sánh chuỗi với một chuỗi khác dựa trên thứ tự từ điển. + concat(String str): Nối chuỗi hiện tại với chuỗi str và trả về chuỗi mới. + isEmpty(): Kiểm tra xem chuỗi có rỗng không. + startsWith(String prefix): Kiểm tra xem chuỗi có bắt đầu bằng chuỗi prefix không. + endsWith(String suffix): Kiểm tra xem chuỗi có kết thúc bằng chuỗi suffix không. + indexOf(int ch): Trả về vị trí đầu tiên của ký tự ch trong chuỗi. + replace(char oldChar, char newChar): Thay thế tất cả các ký tự oldChar bằng ký tự newChar trong chuỗi. + toLowerCase(): Chuyển đổi chuỗi thành dạng chữ thường. + toUpperCase(): Chuyển đổi chuỗi thành dạng chữ hoa. + trim(): Loại bỏ các khoảng trắng ở đầu và cuối chuỗi. + split(String regex): Chia chuỗi thành một mảng các chuỗi con dựa trên biểu thức chính quy regex. + getBytes(): Chuyển đổi chuỗi thành mảng các byte. + format(String format, Object... args): Sử dụng để định dạng chuỗi theo một mẫu được xác định và các đối số được truyền vào. + valueOf(Object obj): Chuyển đổi một đối tượng thành chuỗi.
+- Các phương thức với String class:
+  - length(): Trả về độ dài của chuỗi (số ký tự).
+  - charAt(int index): Trả về ký tự ở vị trí index trong chuỗi.
+  - substring(int beginIndex): Trả về một phần của chuỗi bắt đầu từ beginIndex đến hết chuỗi.
+  - substring(int beginIndex, int endIndex): Trả về một phần của chuỗi từ beginIndex đến endIndex - 1.
+  - equals(Object obj): So sánh chuỗi với một đối tượng khác để kiểm tra xem chúng có giống nhau không.
+  - equalsIgnoreCase(String anotherString): So sánh chuỗi với một chuỗi khác (không phân biệt chữ hoa chữ thường).
+  - compareTo(String anotherString): So sánh chuỗi với một chuỗi khác dựa trên thứ tự từ điển.
+  - concat(String str): Nối chuỗi hiện tại với chuỗi str và trả về chuỗi mới.
+  - isEmpty(): Kiểm tra xem chuỗi có rỗng không.
+  - startsWith(String prefix): Kiểm tra xem chuỗi có bắt đầu bằng chuỗi prefix không.
+  - endsWith(String suffix): Kiểm tra xem chuỗi có kết thúc bằng chuỗi suffix không.
+  - indexOf(int ch): Trả về vị trí đầu tiên của ký tự ch trong chuỗi.
+  - replace(char oldChar, char newChar): Thay thế tất cả các ký tự oldChar bằng ký tự newChar trong chuỗi.
+  - toLowerCase(): Chuyển đổi chuỗi thành dạng chữ thường.
+  - toUpperCase(): Chuyển đổi chuỗi thành dạng chữ hoa.
+  - trim(): Loại bỏ các khoảng trắng ở đầu và cuối chuỗi.
+  - split(String regex): Chia chuỗi thành một mảng các chuỗi con dựa trên biểu thức chính quy regex.
+  - getBytes(): Chuyển đổi chuỗi thành mảng các byte.
+  - format(String format, Object... args): Sử dụng để định dạng chuỗi theo một mẫu được xác định và các đối số được truyền vào.
+  - valueOf(Object obj): Chuyển đổi một đối tượng thành chuỗi.
 
 > Lưu ý rằng class String là `immutable`, nghĩa là sau khi một chuỗi được tạo, nó không thể thay đổi. Bất kỳ thao tác nào thay đổi chuỗi đều sẽ tạo ra một chuỗi mới.
 
 ## II. RegExr
 
-. Regex hay Regular Expressions, là một biểu thức chính quy. Hỗ trợ việc thực hiện các hoạt động khác nhau trên Chuỗi / văn bản như tìm kiếm, xử lý, chỉnh sửa, đối sánh mẫu, thao tác, xác thực email và mật khẩu,...
-. Để sử dụng cần import gói `java.util.regex`, nó sẽ cung cấp 3 `Class` và 1 `Interface` để áp dụng các biểu thức chính quy. + Interface MatchResult. + Pattern Class. + Matcher Class. + PatternSyntaxException Class.
+- Regex hay Regular Expressions, là một biểu thức chính quy. Hỗ trợ việc thực hiện các hoạt động khác nhau trên Chuỗi / văn bản như tìm kiếm, xử lý, chỉnh sửa, đối sánh mẫu, thao tác, xác thực email và mật khẩu,...
+- Để sử dụng cần import gói `java.util.regex`, nó sẽ cung cấp 3 `Class` và 1 `Interface` để áp dụng các biểu thức chính quy. + Interface MatchResult. + Pattern Class. + Matcher Class. + PatternSyntaxException Class.
 
 ### 1. Tìm hiểu chung
 
 #### a. Pattern Class
 
-. Đây là phiên bản biên dịch của một biểu thức chính quy. Nó được sử dụng để xác định một khuôn mẫu cho các biểu thức chính quy.
-. Lớp này có phương thức `Compile()`, ta sẽ truyền `Xâu cần so khớp` vào trong phương thức này, và nó sẽ trả về 1 đối tượng Pattern.
+- Đây là phiên bản biên dịch của một biểu thức chính quy. Nó được sử dụng để xác định một khuôn mẫu cho các biểu thức chính quy.
+- Lớp này có phương thức `Compile()`, ta sẽ truyền `Xâu cần so khớp` vào trong phương thức này, và nó sẽ trả về 1 đối tượng Pattern.
 
-| No. | Phướng thức                                              | Mô tả                                                                                           |
+| No. | Phương thức                                              | Mô tả                                                                                           |
 | --- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | 1   | static Pattern compile(String regex)                     | biên dịch regex đã cho và trả về thể hiện của Pattern                                           |
 | 2   | Matcher matcher(CharSequence input)                      | ạo một matcher khớp với đầu vào đã cho với mẫu                                                  |
@@ -284,32 +312,7 @@ String st = new String(“Hello World”);
 
 ### 2. Cú pháp Regex
 
-| No. | Biểu thức chính quy | Mô tả                                                                                                                                                        |
-| --- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ |
-| 1   | .                   | Khớp (match) với bất kỳ ký tự nào                                                                                                                            |
-| 2   | ^regex              | Biểu thức chính quy phải khớp tại điểm bắt đầu                                                                                                               |
-| 3   | $regex              | Biểu thức chính quy phải khớp tại cuối dòng                                                                                                                  |
-| 4   | \[abc\]             | Thiết lập định nghĩa, có thể khớp với a hoặc b hoặc c                                                                                                        |
-| 5   | \[abc\]\[vz\]       | Thiết lập định nghĩa, có thể khớp với a hoặc b hoặc c theo sau là v hay z                                                                                    |
-| 6   | \[^abc\]            | Khi dấu ^ xuất hiện như là nhân vật đầu tiên trong dấu ngoặc vuông, nó phủ nhận mô hình. Điều này có thể khớp với bất kỳ ký tự nào ngoại trừ a hoặc b hoặc c |
-| 7   | \[a-d1-7\]          | Phạm vi: phù hợp với một chuỗi giữa a và điểm d và con số từ 1 đến 7                                                                                         |
-| 8   | X                   | Z                                                                                                                                                            | Tìm X hoặc Z |
-| 9   | XZ                  | Tìm X và theo sau là Z                                                                                                                                       |
-| 10  | $                   | Kiểm tra kết thúc dòng                                                                                                                                       |
-| 11  | \d                  | Số bất kỳ, viết ngắn gọn cho \[0-9\]                                                                                                                         |
-| 12  | \D                  | Ký tự không phải là số, viết ngắn gon cho \[^0-9\]                                                                                                           |
-| 13  | \s                  | Ký tự khoảng trắng, viết ngắn gọn cho \[\t\n\x0b\r\f\]                                                                                                       |
-| 14  | \S                  | Ký tự không phải khoảng trắng viết ngắn gọn cho \[^\s\]                                                                                                      |
-| 15  | \w                  | Ký tự chữ, viết ngắn gọn cho \[a-zA-Z_0-9\]                                                                                                                  |
-| 16  | \W                  | Ký tự không phải chữ, viết ngắn gọn cho \[^\w\]                                                                                                              |
-| 17  | \S+                 | Một số ký tự không phải khoảng trắng (Một hoặc nhiều)                                                                                                        |
-| 18  | \b                  | Ký tự thuộc a-z hoặc A-Z hoặc 0-9 hoặc , viết ngắn gọn cho \[a-zA-Z0-9\]                                                                                     |
-| 19  | \*                  | Xuất hiện 0 hoặc nhiều lần, viết ngắn gọn cho {0,}                                                                                                           |
-| 20  | +                   | Xuất hiện 1 hoặc nhiều lần, viết ngắn gọn cho {1,}                                                                                                           |
-| 21  | ?                   | Xuất hiện 0 hoặc 1 lần, ? viết ngắn gọn cho {0,1}                                                                                                            |
-| 22  | $ { X } $           | Xuất hiện X lần, {}                                                                                                                                          |
-| 23  | $ { X, Y } $        | Xuất hiện trong khoảng X tới Y lần                                                                                                                           |
-| 24  | $ \*? $             | \* có nghĩa là xuất hiện 0 hoặc nhiều lần, thêm ? phía sau nghĩa là tìm kiếm khớp nhỏ nhất                                                                   |
+[Regex Basic](https://github.com/mtumilowicz/java11-regex)
 
 ### 3. Ví dụ
 
@@ -327,10 +330,10 @@ public class Test {
 }
 ```
 
-. Mục đích đoạn code trên, là tìm kiếm chữ H trong xâu.
-. Ta dùng pattern với regex là \[HE\]: mục đích là tìm chữ H, hoặc E trong xâu, đằng sau nó là phong cách tìm (Tìm không phân biệt hoa, thường).
-. matcher chứa xâu đầu vào.
-. Phương thức `find()` để tìm kiếm chuỗi regex có đảm bảo nằm trong matcher hay không?
+- Mục đích đoạn code trên, là tìm kiếm chữ H trong xâu.
+- Ta dùng pattern với regex là \[HE\]: mục đích là tìm chữ H, hoặc E trong xâu, đằng sau nó là phong cách tìm (Tìm không phân biệt hoa, thường).
+- matcher chứa xâu đầu vào.
+- Phương thức `find()` để tìm kiếm chuỗi regex có đảm bảo nằm trong matcher hay không?
 
 ```
 import java.util.regex.*;
@@ -372,31 +375,32 @@ public class Test {
 
 ### 1. Encapsulation (Tính đóng gói)
 
-. Tính đóng gói trong java là kỹ thuật ẩn giấu thông tin không liên quan và hiện thị ra thông tin liên quan. Mục đích chính của đóng gói trong java là giảm thiểu mức độ phức tạp phát triển phần mềm. Tức là thiết kế để các thuộc tính và phương thức thuộc về (bên trong) một lớp.
-. Với các access modifier, tính đóng gói sẽ có thể giúp ngăn chặn những lớp bên ngoài truy cập, thay đổi thuộc tính và phương thức của một lớp. Từ đó, giúp cho việc che giấu dữ liệu, để bảo vệ trạng thái bên trong của một đối tượng. Hơn nữa, việc ẩn giấu các biến thì các lớp sẽ không chia sẻ thông tin với nhau được. Điều này làm giảm số lượng khớp nối có thể có trong một ứng dụng.
+- Tính đóng gói trong java là kỹ thuật ẩn giấu thông tin không liên quan và hiện thị ra thông tin liên quan. Mục đích chính của đóng gói trong java là giảm thiểu mức độ phức tạp phát triển phần mềm. Tức là thiết kế để các thuộc tính và phương thức thuộc về (bên trong) một lớp.
+
+- Với các `access modifier`, tính đóng gói sẽ có thể giúp ngăn chặn những lớp bên ngoài truy cập, thay đổi thuộc tính và phương thức của một lớp. Từ đó, giúp cho việc che giấu dữ liệu, để bảo vệ trạng thái bên trong của một đối tượng. Hơn nữa, việc ẩn giấu các biến thì các lớp sẽ không chia sẻ thông tin với nhau được. Điều này làm giảm số lượng khớp nối có thể có trong một ứng dụng.
 
 ### 2. Inheritance (Tính kế thừa)
 
-. Tính kế thừa trong Java là một cơ chế trong đó một đối tượng có được tất cả các thuộc tính và hành vi của một đối tượng cha.
-. Khi bạn kế thừa từ một class có sẵn, bạn có thể tái sử dụng các phương thức và trường của class cha. Hơn nữa, bạn có thể thêm các phương thức và trường mới trong class hiện tại.
-. Sử dụng tính kế thừa, ta có thể thực hiện Method Overriding, từ đó xuất hiện tính Đa hình trong runtime.
+- Tính kế thừa trong Java là một cơ chế trong đó một đối tượng có được tất cả các thuộc tính và hành vi của một đối tượng cha.
+- Khi bạn kế thừa từ một class có sẵn, bạn có thể tái sử dụng các phương thức và trường của class cha. Hơn nữa, bạn có thể thêm các phương thức và trường mới trong class hiện tại.
+- Sử dụng tính kế thừa, ta có thể thực hiện Method Overriding, từ đó xuất hiện tính Đa hình trong runtime.
 
-. Kế thừa đại diện cho mối quan hệ `IS-A` , còn được gọi là mối quan hệ cha-con.
+- Kế thừa đại diện cho mối quan hệ `IS-A` , còn được gọi là mối quan hệ cha-con.
 
-. Phân loại:
+- Phân loại:
 
-    + Đơn kế thừa.
-    + Kế thừa nhiều cấp.
-    + Kế thừa thứ bậc.
+  - Đơn kế thừa.
+  - Kế thừa nhiều cấp.
+  - Kế thừa thứ bậc.
 
-![image]1(https://live.staticflickr.com/65535/53157827362_1dfe1b6d35_z.jpg)
+![image1](https://live.staticflickr.com/65535/53157827362_1dfe1b6d35_z.jpg)
 
-. Đa kế thừa và Kế thừa hỗn hợp không được hỗ trợ thông qua `Class` trong Java, nhưng vẫn được hỗ trợ thông qua `Interface`
+- Đa kế thừa và Kế thừa hỗn hợp không được hỗ trợ thông qua `Class` trong Java, nhưng vẫn được hỗ trợ thông qua `Interface`
 
-. Khi một class kế thừa nhiều lớp nó sẽ được gọi là đa kế thừa
-![image2](https://live.staticflickr.com/65535/53158836565_f4a1feb403_z.jpg)
+- Khi một class kế thừa nhiều lớp nó sẽ được gọi là đa kế thừa
+  ![image2](https://live.staticflickr.com/65535/53158836565_f4a1feb403_z.jpg)
 
-. Cú pháp: sử dụng từ khóa `extends`
+- Cú pháp: sử dụng từ khóa `extends`
 
 ```
 class Subclass extends Superclass {
@@ -404,9 +408,9 @@ class Subclass extends Superclass {
 }
 ```
 
-.Ngoài ra còn có từ khóa `super` để tham chiếu trực tiếp đến đối tượng của lớp cha gần nhất.
+- Ngoài ra còn có từ khóa `super` để tham chiếu trực tiếp đến đối tượng của lớp cha gần nhất.
 
-    + Sử dụng từ khóa `super.xxx` để gọi đến phương thức xxx của lớp cha gần nhất. + Sử dụng `super()` để gọi trực tiếp constructor (hàm tạo) của lớp cha gần nhất.
+  - Sử dụng từ khóa `super.xxx` để gọi đến phương thức xxx của lớp cha gần nhất. + Sử dụng `super()` để gọi trực tiếp constructor (hàm tạo) của lớp cha gần nhất.
 
 ### 3. Polymorphism(Tính đa hình)
 
@@ -473,18 +477,18 @@ public class Student8 {
 }
 ```
 
-. Phương thức static:
+- Phương thức static:
 
-    - Một phương thức static thuộc lớp chứ không phải đối tượng của lớp.
-    - Một phương thức static gọi mà không cần tạo một instance của một lớp.
-    - Phương thức static có thể truy cập biến static và có thể thay đổi giá trị của nó.
-    - Phương thức static không thể sử dụng biến non-static hoặc gọi trực tiếp phương thức non-static.
+  - Một phương thức static thuộc lớp chứ không phải đối tượng của lớp.
+  - Một phương thức static gọi mà không cần tạo một instance của một lớp.
+  - Phương thức static có thể truy cập biến static và có thể thay đổi giá trị của nó.
+  - Phương thức static không thể sử dụng biến non-static hoặc gọi trực tiếp phương thức non-static.
 
-. Từ khóa this và super không thể được sử dụng trong ngữ cảnh static.
+- Từ khóa this và super không thể được sử dụng trong ngữ cảnh static.
 
-    - Khối static:
-        + Được sử dụng để khởi tạo thành viên dữ liệu static.
-        + Nó được thực thi trước phương thức main tại lúc tải lớp.
+  - Khối static:
+    - Được sử dụng để khởi tạo thành viên dữ liệu static.
+    - Nó được thực thi trước phương thức main tại lúc tải lớp.
 
 ```
 public class A2 {
@@ -500,15 +504,17 @@ public class A2 {
 
 ### 6. Abstract Classes (Lớp trừu tượng)
 
-. Một phương thức được khai báo là `abstract` và không có code thực thi thì đó là phương thức trừu tượng, (giống virtual trong CPP), được khai báo với từ khóa `abstract` ở trước.
-. Tính trừu tượng cho phép bạn ẩn các hoạt động bên trong của một đối tượng và chỉ hiển thị các tính năng mà người dùng cần biết. Java cung cấp hai cách để thực hiện trừu tượng hóa: `abstract classes` và `interface`. Với các abstract classes, bạn có thể đạt được sự trừu tượng hóa một phần, trong khi interfaces có thể trừu tượng hóa toàn bộ (100%).
-. Một lớp trừu tượng là một `super class` (lớp cha) không thể được khởi tạo. Để tạo một đối tượng mới, bạn cần khởi tạo một trong các lớp con của nó. Các lớp trừu tượng có thể có cả phương thức trừu tượng và cụ thể. Các phương thức trừu tượng chỉ chứa signature của phương thức, trong khi các phương thức cụ thể cũng khai báo phần thân của phương thức. Các lớp trừu tượng được định nghĩa bằng từ khóa `abstract`
+- Một phương thức được khai báo là `abstract` và không có code thực thi thì đó là phương thức trừu tượng, (giống virtual trong CPP), được khai báo với từ khóa `abstract` ở trước.
+
+- Tính trừu tượng cho phép bạn ẩn các hoạt động bên trong của một đối tượng và chỉ hiển thị các tính năng mà người dùng cần biết. Java cung cấp hai cách để thực hiện trừu tượng hóa: `abstract classes` và `interface`. Với các abstract classes, bạn có thể đạt được sự trừu tượng hóa một phần, trong khi interfaces có thể trừu tượng hóa toàn bộ (100%).
+
+- Một lớp trừu tượng là một `super class` (lớp cha) không thể được khởi tạo. Để tạo một đối tượng mới, bạn cần khởi tạo một trong các lớp con của nó. Các lớp trừu tượng có thể có cả phương thức trừu tượng và cụ thể. Các phương thức trừu tượng chỉ chứa signature của phương thức, trong khi các phương thức cụ thể cũng khai báo phần thân của phương thức. Các lớp trừu tượng được định nghĩa bằng từ khóa `abstract`
 
 ```
 abstract void printStatus();
 ```
 
-. Lớp `abstract` là lớp có các `abstract method`:
+- Lớp `abstract` là lớp có các `abstract method`:
 
 ```
 abstract class Bike{
@@ -531,7 +537,7 @@ class Honda4 extends Bike{
 
 ### 7. Interfaces
 
-. Là một bản thiết kế của một lớp. Nó chỉ có các phương thức trừu tượng. Interface là một kỹ thuật để thu được tính trừu tượng hoàn toàn và đa kế thừa trong Java. Nó không thể được khởi tạo giống như lớp trừu tượng
+- Là một bản thiết kế của một lớp. Nó chỉ có các phương thức trừu tượng. Interface là một kỹ thuật để thu được tính trừu tượng hoàn toàn và đa kế thừa trong Java. Nó không thể được khởi tạo giống như lớp trừu tượng
 
 ```
 interface InterfaceName {
@@ -539,7 +545,7 @@ interface InterfaceName {
 }
 ```
 
-. Sử dụng từ khóa `implements`.
+- Sử dụng từ khóa `implements`.
 
 ```
 public class Cat implements Animal {
@@ -547,7 +553,7 @@ public class Cat implements Animal {
 }
 ```
 
-. Ta có thể dùng `interface` để sử dụng đa kế thừa:
+- Ta có thể dùng `interface` để sử dụng đa kế thừa:
 
 ```
 interface Printable {
@@ -571,12 +577,12 @@ class A7 implements Printable,Showable {
 }
 ```
 
-. Một interface khác với một class ở một số điểm sau đây:
+- Một interface khác với một class ở một số điểm sau đây:
 
-    - Bạn không thể khởi tạo một interface, cho nên một interface không chứa bất cứ hàm Contructor nào.
-    - Tất cả các phương thức của interface đều là abstract.
-    - Một interface không thể chứa một trường nào trừ các trường vừa static và final.
-    - Một interface không thể kế thừa từ lớp, nó được triển khai bởi một lớp, nhưng một interface có thể kế thừa từ nhiều interface khác.
+  - Bạn không thể khởi tạo một interface, cho nên một interface không chứa bất cứ hàm Contructor nào.
+  - Tất cả các phương thức của interface đều là abstract.
+  - Một interface không thể chứa một trường nào trừ các trường vừa static và final.
+  - Một interface không thể kế thừa từ lớp, nó được triển khai bởi một lớp, nhưng một interface có thể kế thừa từ nhiều interface khác.
 
 ```
 // Kế thừa của interface
