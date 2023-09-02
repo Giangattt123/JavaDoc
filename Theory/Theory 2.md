@@ -41,23 +41,23 @@ Kiến thức bài học này:
   - SortedSet: Là một dạng riêng của Set interface, trong đó các giá trị của các phần tử mặc định được sắp xếp tăng dần.
   - SortedMap: Là một dạng riêng của Map interface, trong đó key được sắp xếp theo thứ tự tăng dần.
 
-- Một số `method` của Interface Collection. Các method này sẽ được các `Interface` con kế thừa lại:
+- Một số `method` của Interface Collection.
+- Các method này sẽ được các `Interface` con kế thừa lại:
 
-| **Phương thức**                   | **Mô tả**                                                                                                      |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------------- | ---------------------------- | -------------------------------------------------------------------------------------------- |
-| boolean add(Object element)       | Được sử dụng để chèn một phần tử vào collection                                                                | boolean addAll(Collection c) | Được sử dụng để chèn các phần tử collection được chỉ định vào collection gọi phương thức này |
-| boolean remove(Object element)    | Được sử dụng để xóa phần tử từ collection                                                                      |
-| boolean removeAll(Collection c)   | Được sử dụng để xóa tất cả các phần tử của collection được chỉ định từ collection gọi phương thức này          |
-| boolean retainAll(Collection c)   | Được sử dụng để xóa tất cả các thành phần từ collection gọi phương thức này ngoại trừ collection được chỉ định |
-| int size()                        | Trả lại tổng số các phần tử trong collection                                                                   |
-| void clear()                      | Loại bỏ tổng số của phần tử khỏi collection                                                                    |
-| boolean contains(Object element)  | Được sử dụng để tìm kiếm phần tử                                                                               |
-| boolean containsAll(Collection c) | Được sử dụng để tìm kiếm collection được chỉ định trong collection                                             |
-| Iterator iterator()               | Trả về một iterator                                                                                            |
-| Object[] toArray()                | Chuyển đổi collection thành mảng (array)                                                                       |
-| boolean isEmpty()                 | Kiểm tra nếu collection trống                                                                                  |
-| boolean equals(Object element)    | So sanh 2 collection                                                                                           |
-| int hashCode()                    | Trả về số hashcode của collection                                                                              |
+  - boolean add(Object element): Được sử dụng để chèn một phần tử vào collection.
+  - boolean addAll(Collection c): Được sử dụng để chèn các phần tử collection được chỉ định vào collection gọi phương thức này.
+  - boolean remove(Object element): Được sử dụng để xóa phần tử từ collection.
+  - boolean removeAll(Collection c): Được sử dụng để xóa tất cả các phần tử của collection được chỉ định từ collection gọi phương thức này.
+  - boolean retainAll(Collection c): Được sử dụng để xóa tất cả các thành phần từ collection gọi phương thức này ngoại trừ collection được chỉ định.
+  - int size(): Trả lại tổng số các phần tử trong collection.
+  - void clear(): Loại bỏ tổng số của phần tử khỏi collection.
+  - boolean contains(Object element): Được sử dụng để tìm kiếm phần tử.
+  - boolean containsAll(Collection c): Được sử dụng để tìm kiếm collection được chỉ định trong collection.
+  - Iterator iterator(): Trả về một iterator.
+  - Object[] toArray(): Chuyển đổi collection thành mảng (array).
+  - boolean isEmpty(): Kiểm tra nếu collection trống.
+  - boolean equals(Object element): So sanh 2 collection.
+  - int hashCode(): Trả về số hashcode của collection.
 
 - Ngoài ra, ta còn có thể làm việc với `Collection` thông qua `Iterator Interface`.
   | **Phương thức**| **Mô tả** |
